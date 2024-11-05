@@ -9,6 +9,15 @@
     font-family: 'Georgia', serif;
 }
 
+/* Right Content Column Styling */
+.content-column {
+    flex-grow: 1; /* Take up remaining space */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
 /* Left Menu Column Styling */
 .left-menu-column {
     width: 200px; /* Fixed width for the left column */
@@ -17,15 +26,6 @@
     border: 1px solid #ddd;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
     text-align: center; 
-}
-
-/* Right Content Column Styling */
-.content-column {
-    flex-grow: 1; /* Take up remaining space */
-    padding: 20px;
-    background-color: #fff;
-    border: 1px solid #ddd;
-    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .left-menu-column h3 {
@@ -63,7 +63,6 @@
     background-color: #fff;
 }
 
-/* Hero Section */
 .hero {
     background: #fafafa;
     padding: 100px 20px;
