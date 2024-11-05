@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Galerija</title>
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/herowrappershared.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/galerija.css">
@@ -17,10 +18,10 @@
         <div class="nav-container">
             <nav>
                 <ul class="nav-links">
-                    <li><a href="Pagrindinis.html">Pagrindinis</a></li>
-                    <li><a href="apie.html">Apie</a></li>
-                    <li><a href="galerija.html">Galerija</a></li>
-                    <li><a href="kontaktai.html">Kontaktai</a></li>
+                    <li><a href="Pagrindinis.html">Main</a></li>
+                    <li><a href="apie.html">About</a></li>
+                    <li><a href="galerija.html">Gallery</a></li>
+                    <li><a href="kontaktai.html">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -29,12 +30,24 @@
     <div class="main-container">
         <!-- Left Menu Column -->
         <div class="left-menu-column">
-            <ul>
-                <li><a href="Pagrindinis.html">Main</a></li>
-                <li><a href="apie.html">About</a></li>
-                <li><a href="galerija.html">Gallery</a></li>
-                <li><a href="kontaktai.html">Contacts</a></li>
-            </ul>
+            <h3>Content Search</h3>
+            <div class="search-container">
+                <form class="search-form" onsubmit="return handleSearch()">
+                    <div class="input-container">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <span class="tooltip">Enter photo name or genre</span>
+                    </div>
+                    <button type="submit">Search</button>
+                    <a href="upload.html" class="upload-button-link">Upload</a>
+                </form>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="social-media-links">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
 
         <!-- Main Content Column -->

@@ -1,0 +1,105 @@
+.search-form {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.search-form input[type="text"] {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    font-size: 16px;
+}
+
+.search-form button {
+    padding: 10px;
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+/* Styling for Search Container */
+.search-container {
+    position: relative; /* Necessary to position tooltip relative to this container */
+    display: inline-block;
+}
+
+/* Tooltip Styling - Adjusted for Smaller Size */
+.tooltip {
+    visibility: hidden;
+    background-color: #333; /* Dark background for the tooltip */
+    color: #fff; /* White text for better contrast */
+    text-align: center;
+    padding: 3px 8px; /* Reduced padding for smaller size */
+    border-radius: 3px; /* Reduced border radius */
+    font-size: 12px; /* Smaller font size to fit in one line */
+    width: 150px;
+    
+    /* Positioning */
+    position: absolute;
+    top: -10px; /* Adjust to position above the input */
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1;
+
+    /* Optional - Fade-in effect */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+/* Show Tooltip on Hover */
+.search-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+
+.social-media-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center; /* Center the social media icons */
+}
+
+.social-media-links a {
+    color: #333;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.social-media-links a:hover {
+    color: #32b7ff; /* Change the color of the icon when hovered (you can customize this) */
+}
+
+/* Styling for the Upload Link */
+.upload-button-link {
+    display: inline-block;
+    padding: 10px;
+    background-color: #333; /* A different shade for visual distinction */
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px; /* Add space between the Search and Upload buttons */
+    font-family: 'Georgia', serif;
+    letter-spacing: 1px;
+    font-size: 17px;
+}
+
+.upload-button-link:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+.search-form button:hover {
+    background-color: #444; /* Darker shade on hover */
+}
+
+

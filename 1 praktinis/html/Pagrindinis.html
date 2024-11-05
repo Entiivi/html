@@ -3,8 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/pagrindinis.css">
     <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Pagrindinis</title>
 </head>
 <body>
@@ -15,10 +17,10 @@
         <div class="nav-container">
             <nav>
                 <ul class="nav-links">
-                    <li><a href="Pagrindinis.html">Pagrindinis</a></li>
-                    <li><a href="apie.html">Apie</a></li>
-                    <li><a href="galerija.html">Galerija</a></li>
-                    <li><a href="kontaktai.html">Kontaktai</a></li>
+                    <li><a href="Pagrindinis.html">Main</a></li>
+                    <li><a href="apie.html">About</a></li>
+                    <li><a href="galerija.html">Gallery</a></li>
+                    <li><a href="kontaktai.html">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -27,12 +29,24 @@
     <div class="main-container">
         <!-- Left Menu Column -->
         <div class="left-menu-column">
-            <ul>
-                <li><a href="Pagrindinis.html">Main</a></li>
-                <li><a href="apie.html">About</a></li>
-                <li><a href="galerija.html">Gallery</a></li>
-                <li><a href="kontaktai.html">Contacts</a></li>
-            </ul>
+            <h3>Content Search</h3>
+            <div class="search-container">
+                <form class="search-form" onsubmit="return handleSearch()">
+                    <div class="input-container">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <span class="tooltip">Enter photo name or genre</span>
+                    </div>
+                    <button type="submit">Search</button>
+                    <a href="upload.html" class="upload-button-link">Upload</a>
+                </form>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="social-media-links">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
         </div>
 
         <!-- Main Content Column -->
@@ -41,7 +55,7 @@
             <figure class="hero-wrapper">           
                 <section class="hero">
                     <div class="hero-content">
-                        <h2>Mano Svetaine</h2>
+                        <h2>My Website</h2>
                         <p>Susipažinkite su mano geriausiomis fotografijos akimirkomis, gražiai įamžintomis visiems.</p>
                     </div>
                 </section>
@@ -50,13 +64,13 @@
             <!-- Gallery Teaser Section -->
             <figure class="hero-wrapper">
                 <section class="gallery-teaser">
-                    <h2>Galerijos akcentai</h2>
+                    <h2>Gallery</h2>
                     <div class="gallery-grid">
                         <img src="/Nuotraukos/DSC_1277.JPG" alt="Photo 1">
                         <img src="/Nuotraukos/DSC_5660.JPG" alt="Photo 2">
                         <img src="/Nuotraukos/DSC_6858.JPG" alt="Photo 3">
                     </div>
-                    <p><a href="galerija.html">Daugiau</a></p>
+                    <p><a href="galerija.html">More</a></p>
                 </section>
             </figure>
         </div>
@@ -65,5 +79,35 @@
     <footer>
         <p>&copy; 2024 Ignas Sakalauskas PI22B</p>
     </footer>
+
+    <script>
+        function handleSearch() {
+            // Get the user's search input
+            let query = document.getElementById('searchInput').value.toLowerCase();
+    
+            // If there's nothing to search, just return
+            if (query === "") {
+                alert("Please enter a search term.");
+                return false;
+            }
+    
+            // Get all elements that you want to search through
+            let sections = document.querySelectorAll('.content-column section, .left-menu-column ul li a');
+    
+            // Loop through each element to see if it matches the query
+            sections.forEach((section) => {
+                // If text contains the search term, make it visible, otherwise hide it
+                if (section.textContent.toLowerCase().includes(query)) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+    
+            // Prevent form submission since the search is handled with JavaScript
+            return false;
+        }
+    </script>
+    
 </body>
 </html>
