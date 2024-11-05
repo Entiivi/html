@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontaktai</title>
+    <title>Contacts</title>
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="/css/kontaktai.css">
@@ -12,15 +12,15 @@
 <body>
     <header>
         <div class="title-container">
-            <h1>Kontaktai</h1>
+            <h1>Contacts</h1>
         </div>
         <div class="nav-container">
             <nav>
                 <ul class="nav-links">
-                    <li><a href="Pagrindinis.html">Pagrindinis</a></li>
-                    <li><a href="apie.html">Apie</a></li>
-                    <li><a href="galerija.html">Galerija</a></li>
-                    <li><a href="kontaktai.html">Kontaktai</a></li>
+                    <li><a href="Pagrindinis.html">Main</a></li>
+                    <li><a href="apie.html">About</a></li>
+                    <li><a href="galerija.html">Gallery</a></li>
+                    <li><a href="kontaktai.html">Contacts</a></li>
                 </ul>
             </nav>
         </div>
@@ -53,33 +53,32 @@
         <div class="content-column">
             <section class="hero-wrapper">
                 <div class="contact-section">
-                    <h2>Susisiekite</h2>
-                    <p>Jeigu turite klausimų ar norite susisiekti, užpildykite formą žemiau arba naudokite kontaktinę informaciją:</p>
+                    <h2>Contact</h2>
+                    <p>If you have any questions or would like to get in touch, please fill in the form below or use the contact details:</p>
 
                     <!-- Contact Form -->
                     <form class="form2" action="submit_contact.php" method="POST">
-                        <label for="name">Vardas:</label>
+                        <label for="name">Name:</label>
                         <input type="text" id="name" name="name" required><br>
 
-                        <label for="email">El. paštas:</label>
+                        <label for="email">Email:</label>
                         <input type="email" id="email" name="email" required><br>
 
-                        <label for="subject">Tema:</label>
+                        <label for="subject">Subject:</label>
                         <input type="text" id="subject" name="subject"><br>
 
-                        <label for="message">Žinutė:</label>
+                        <label for="message">Message:</label>
                         <textarea id="message" name="message" rows="6" required></textarea><br>
 
-                        <button type="submit">Siųsti</button>
+                        <button type="submit">Send</button>
                     </form>
                 </div>
             </section>
 
             <section class="hero-wrapper">
                 <div class="contact-info-section">
-                    <h2>Kontaktinė informacija</h2>
-                    <p><strong>El. paštas:</strong> ignas@example.com</p>
-                    <p><strong>Telefonas:</strong> +370 123 45678</p>
+                    <h2>Contact information</h2>
+                    <p><strong>Email:</strong> ignas@example.com</p>
 
                     <!-- Optional: Embed a map -->
                     <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d4612.504903501945!2d25.26042174813353!3d54.68758502154477!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2slt!4v1728334460844!5m2!1sen!2slt" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>

@@ -99,6 +99,8 @@
     margin: 0;
     padding: 40px 20px;
     color: #333;
+    background-color: #afafaf6a;
+    border-radius: 10px;
 }
 
 .gallery-grid {

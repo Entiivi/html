@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/upload.css">
+    <link rel="stylesheet" href="/css/search.css">
+    <link rel="stylesheet" href="/css/pagrindinis.css">
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>Pagrindinis</title>
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1>Pagrindinis</h1>
+        </div>
+        <div class="nav-container">
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="Pagrindinis.html">Main</a></li>
+                    <li><a href="apie.html">About</a></li>
+                    <li><a href="galerija.html">Gallery</a></li>
+                    <li><a href="kontaktai.html">Contacts</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div class="main-container">
+        <!-- Left Menu Column -->
+        <div class="left-menu-column">
+            <h3>Content Search</h3>
+            <div class="search-container">
+                <form class="search-form" onsubmit="return handleSearch()">
+                    <div class="input-container">
+                        <input type="text" id="searchInput" placeholder="Search...">
+                        <span class="tooltip">Enter photo name or genre</span>
+                    </div>
+                    <button type="submit">Search</button>
+                    <a href="upload.html" class="upload-button-link">Upload</a>
+                </form>
+            </div>
+            
+            <!-- Social Media Links -->
+            <div class="social-media-links">
+                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+
+        <!-- Main Content Column -->
+        <div class="content-column">
+            <!-- Hero Section -->
+            <section class="hero-wrapper">
+                <div class="upload-container">
+                    <div class="form-section">
+                        <label for="photo-name">Name</label>
+                        <input type="text" id="photo-name" name="photo-name" placeholder="Enter photo name">
+
+                        <label for="photo-about">About</label>
+                        <textarea id="photo-about" name="photo-about" rows="5" placeholder="Write about the photo..."></textarea>
+
+                        <label for="photo-file">Select Photo</label>
+                        <input type="file" id="photo-file" name="photo-file" accept="image/*" onchange="previewImage(event)">
+
+                        <div class="buttons-container">
+                            <button class="upload-btn">Upload Next</button>
+                            <button class="save-btn">Save</button>
+                            <button class="back-btn" onclick="goBack()">Back</button>
+                        </div>
+                    </div>
+                    <div class="image-preview" id="image-preview">
+                        .JPG
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Ignas Sakalauskas PI22B</p>
+    </footer>
+
+    <script>
+        function handleSearch() {
+            console.log("Search triggered"); // Debugging log for search function
+
+            // Get the user's search input
+            let query = document.getElementById('searchInput').value.toLowerCase();
+    
+            // If there's nothing to search, just return
+            if (query === "") {
+                alert("Please enter a search term.");
+                return false;
+            }
+
+            console.log("Searching for: ", query); // Debugging log for search input
+    
+            // Get all elements that you want to search through
+            let sections = document.querySelectorAll('.content-column section, .left-menu-column ul li a');
+    
+            // Loop through each element to see if it matches the query
+            sections.forEach((section) => {
+                // If text contains the search term, make it visible, otherwise hide it
+                if (section.textContent.toLowerCase().includes(query)) {
+                    console.log("Match found in: ", section); // Debugging log for matched section
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
+    
+            // Prevent form submission since the search is handled with JavaScript
+            return false;
+        }
+
+        function goBack() {
+            console.log("Going back to the previous page"); // Debugging log for goBack function
+            window.history.back();
+        }
+
+        function previewImage(event) {
+            console.log("File selected for preview"); // Debugging log for image selection
+            const imagePreview = document.getElementById('image-preview');
+            const file = event.target.files[0];
+            
+            if (file) {
+                console.log("File type: ", file.type); // Debugging log for file type
+                const reader = new FileReader();
+                reader.onload = function() {
+                    console.log("File loaded for preview"); // Debugging log for file load
+                    imagePreview.innerHTML = `<img src="${reader.result}" alt="Image Preview" style="max-width: 100%; max-height: 100%; border-radius: 5px;">`;
+                }
+                reader.readAsDataURL(file);
+            } else {
+                console.log("No file selected"); // Debugging log for no file case
+                imagePreview.innerHTML = ".JPG";
+            }
+        }
+
+        // Drag and Drop Event Handlers
+        const imagePreview = document.getElementById('image-preview');
+
+        imagePreview.addEventListener('dragover', (e) => {
+            e.preventDefault();
+            console.log("Drag over image preview"); // Debugging log for drag over
+            imagePreview.style.border = "2px dashed #333"; // Show dashed border to indicate drop area
+        });
+
+        imagePreview.addEventListener('dragleave', () => {
+            console.log("Drag leave image preview"); // Debugging log for drag leave
+            imagePreview.style.border = "none"; // Revert border to normal
+        });
+
+        imagePreview.addEventListener('drop', (e) => {
+            e.preventDefault();
+            console.log("File dropped into image preview"); // Debugging log for drop event
+            imagePreview.style.border = "none"; // Revert border to normal
+
+            const file = e.dataTransfer.files[0];
+            console.log("Dropped file type: ", file.type); // Debugging log for dropped file type
+            
+            if (file && file.type.startsWith('image/')) {
+                console.log("Dropped file is an image"); // Debugging log for valid file
+                const reader = new FileReader();
+                reader.onload = function() {
+                    console.log("Dropped file loaded for preview"); // Debugging log for file load
+                    imagePreview.innerHTML = `<img src="${reader.result}" alt="Image Preview" style="max-width: 100%; max-height: 100%; border-radius: 5px;">`;
+                }
+                reader.readAsDataURL(file);
+            } else {
+                console.error("Invalid file type. Please drop a valid image."); // Debugging log for invalid file type
+                alert("Please drop a valid image file.");
+            }
+        });
+    </script>
+</body>
+</html>
