@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="/css/shared.css">
+    <link rel="stylesheet" href="/css/login.css">
+</head>
+<body>
+    <header>
+        <div class="title-container">
+            <h1>Prisijungimas</h1>
+    </header>
+    
+    <main>
+        <section class="login-section">
+            <form onsubmit="window.location.href='Pagrindinis.html'; return false;" class="login-form">
+                <label for="username">Vartotojo vardas:</label>
+                <input type="text" id="username" name="username" required>
+            
+                <label for="password">Slaptažodis:</label>
+                <input type="password" id="password" name="password" required>
+            
+                <button type="submit">Prisijungti</button>
+                <button type="button" onclick="window.location.href='registracija.html'">Registruotis</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Ignas Sakalauskas PI22B</p>
+    </footer>
+</body>
+</html>

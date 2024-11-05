@@ -1,0 +1,23 @@
+.main-container {
+    display: flex;
+    flex-direction: row;
+    max-width: 1200px;
+    margin: 0 auto; /* Aligns everything centrally */
+    font-family: 'Georgia', serif;
+}
+
+.left-menu-column {
+    width: 20%; /* Set a fixed width percentage for the left column */
+    padding: 20px;
+    background-color: #fff; /* White background for content areas to enhance readability */
+    border: 1px solid #ddd; /* Soft border for a classic, subtle division */
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1); /* Soft shadow for depth */
+}
+
+.content-column {
+    width: 75%; /* Set the width for the content column */
+    padding: 20px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}

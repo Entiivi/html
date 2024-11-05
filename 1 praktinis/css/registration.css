@@ -1,0 +1,87 @@
+/* General Reset */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Georgia', serif;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+}
+
+/* Registration Form Styling */
+.registration-section {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 0px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.registration-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 400px;
+    width: 100%;
+}
+
+.registration-form label {
+    font-weight: bold;
+    color: #333;
+}
+
+.registration-form input {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 0px;
+}
+
+.registration-form button {
+    padding: 10px;
+    font-size: 18px;
+    background-color: #333;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.registration-form button:hover {
+    background-color: #444;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #262626;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: auto;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .registration-section {
+        padding: 20px;
+    }
+}

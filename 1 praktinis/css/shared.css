@@ -1,0 +1,131 @@
+
+/* Reset margin and padding */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f0f0f0; /* Light gray background for a classic, subtle feel */
+    font-family: 'Georgia', serif !important;
+    font-family: 'Rajdhani', sans-serif; /* Classic serif font for a more traditional look */
+    color: #333; /* Dark gray for text */
+}
+
+/* Styling for the title container */
+.title-container {
+    background-color: #262626; /* Dark, muted background similar to a retro archive look */
+    padding: 40px 0; /* Generous padding for an elegant feel */
+    text-align: center; /* Center align the title */
+    position: relative; /* Relative positioning for pseudo-elements */
+}
+
+/* Styling for the title */
+.title-container h1 {
+    color: #fff; /* White text for the title */
+    margin: 0;
+    font-size: 42px; /* Large text for emphasis */
+    font-weight: normal; /* Classic feel with regular font weight */
+    letter-spacing: 1px; /* Slight spacing for a refined look */
+    position: relative;
+    display: inline-block;
+    padding: 0 20px; /* Padding on the sides to create space for lines */
+}
+
+/* Adding lines to the left and right of the title */
+.title-container h1::before,
+.title-container h1::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    width: 100px; /* Length of the lines */
+    height: 2px; /* Thickness of the lines */
+    background-color: #fff; /* White color for the lines */
+    transform: translateY(-50%);
+}
+
+.title-container h1::before {
+    left: -120px; /* Position the left line */
+}
+
+.title-container h1::after {
+    right: -120px; /* Position the right line */
+}
+
+/* Styling for the navigation container */
+.nav-container {
+    background-color: #333; /* Slightly lighter than the title background */
+    padding: 10px 0; /* Padding around the navigation links */
+}
+
+/* Styling for the navigation links */
+.nav-links {
+    display: flex;
+    justify-content: center;
+    gap: 40px; /* Space between navigation links for a neat and organized look */
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links li {
+    position: relative; /* Position relative to enable pseudo-element positioning */
+    color: #e0e0e0;
+}
+
+.nav-links li a {
+    color: inherit; /* Light gray color for a soft contrast */
+    text-decoration: none;
+    font-size: 18px; /* Consistent, readable font size */
+    padding: 5px 10px;
+    transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease; /* Adding transition to enhance hover effect */
+}
+
+/* Hover effect with star symbol */
+.nav-links li a:hover {
+    color: inherit; /* White text on hover */
+    background-color: #444; /* Darker background to make the hover effect visible */
+    border-bottom: 3px solid #ff9800; /* Add a retro orange underline effect on hover */
+    text-decoration: none; /* No underline except for the border-bottom */
+}
+
+.nav-links li a:hover::after {
+    content: '★'; /* Unicode star character */
+    color: #fff; /* White color for the star */
+    position: absolute;
+    top: -40px; /* Position above the link */
+    left: 50%;
+    transform: translateX(-50%); /* Center the star horizontally */
+    font-size: 24px; /* Size of the star */
+    transition: opacity 0.3s ease; /* Smooth transition */
+    opacity: 1; /* Make the star fully visible on hover */
+}
+
+.nav-links li a::after {
+    content: '★'; /* Unicode star character */
+    color: #fff; /* White color for the star */
+    position: absolute;
+    top: -40px; /* Position above the link */
+    left: 50%;
+    transform: translateX(-50%); /* Center the star horizontally */
+    font-size: 24px; /* Size of the star */
+    opacity: 0; /* Hide the star by default */
+    transition: opacity 0.3s ease; /* Smooth transition */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    
+}
+
+footer {
+    background-color: #262626;
+    color: #e0e0e0;
+    text-align: center;
+    padding: 20px;
+    margin-top: auto;  /* Push footer to the bottom */
+    font-family: 'Georgia', serif;
+    font-size: 14px;
+    border-top: 3px solid #444;
+}
