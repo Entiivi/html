@@ -98,40 +98,88 @@
 }
 
 /* Gallery Teaser Section */
-.gallery-teaser {
-    background: #fafafa;
+.hero-wrapper {
+    max-width: 800px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
     text-align: center;
-    margin: 0;
-    padding: 40px 20px;
-    color: #333;
+}
+
+.gallery-teaser {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
     background-color: #afafaf6a;
     border-radius: 10px;
-}
-
-.gallery-grid {
+    overflow: hidden;
     display: flex;
-    gap: 15px;
-    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 }
 
-.gallery-grid img {
-    width: 180px;
-    height: 120px;
+/* Gallery Carousel Styling */
+.gallery-carousel {
+    position: relative;
+    width: 100%;
+    height: 240px; /* Adjust to fit your image sizes */
+    overflow: hidden;
+    margin: auto;
+    display: flex;  /* Align items within the container */
+    justify-content: center;  /* Center the items */
+    align-items: center;  /* Vertically center */
+    white-space: nowrap; /* Prevents items from wrapping */
+}
+
+.gallery-item {
+    position: absolute; /* Allow positioning each item precisely */
+    top: 50%; /* Vertically center */
+    left: 50%; /* Horizontally center */
+    transform: translate(-50%, -50%) scale(0.8); /* Default to slightly smaller */
+    width: 300px;
+    height: 200px;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+    cursor: pointer;
+    opacity: 0.6;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
-    border-radius: 3px;
-    transition: transform 0.3s ease;
+    border-radius: 15px;
 }
 
-.gallery-grid img:hover {
-    transform: scale(1.05);
+.gallery-item.active {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+    z-index: 3;  /* Ensure active items are in front */
 }
 
-.gallery-teaser a {
-    color: #333;
-    text-decoration: none;
-    font-weight: bold;
+.gallery-item.left {
+    transform: translate(calc(-150% - 30px), -50%) scale(0.8);
+    opacity: 0.6;
+    z-index: 2;
 }
 
-.gallery-teaser a:hover {
-    text-decoration: underline;
+.gallery-item.right {
+    transform: translate(calc(50% + 30px), -50%) scale(0.8);
+    opacity: 0.6;
+    z-index: 2;
 }
+
+.gallery-item.far-left,
+.gallery-item.far-right {
+    transform: translate(calc(50% + 200px), -50%) scale(0.6);
+    opacity: 0.3;
+    z-index: 1;
+}
+
+

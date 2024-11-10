@@ -60,6 +60,7 @@
     cursor: pointer;
     transition: background-color 0.3s;
 }
+
 .upload-btn {
     background-color: #56bee7;
     color: #000000;
