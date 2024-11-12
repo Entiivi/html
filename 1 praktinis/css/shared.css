@@ -4,8 +4,7 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
-    background-color: #f0f0f0; /* Light gray background for a classic, subtle feel */
+    box-sizing: border-box; /* Light gray background for a classic, subtle feel */
     font-family: 'Georgia', serif !important;
     font-family: 'Rajdhani', sans-serif; /* Classic serif font for a more traditional look */
     color: #333; /* Dark gray for text */
@@ -13,7 +12,7 @@ html, body {
 
 /* Styling for the title container */
 .title-container {
-    background-color: #262626; /* Dark, muted background similar to a retro archive look */
+    background-color: #26262600; /* Dark, muted background similar to a retro archive look */
     padding: 40px 0; /* Generous padding for an elegant feel */
     text-align: center; /* Center align the title */
     position: relative; /* Relative positioning for pseudo-elements */
@@ -53,7 +52,7 @@ html, body {
 
 /* Styling for the navigation container */
 .nav-container {
-    background-color: #333; /* Slightly lighter than the title background */
+    background-color: #33333300; /* Slightly lighter than the title background */
     padding: 10px 0; /* Padding around the navigation links */
 }
 
@@ -61,7 +60,7 @@ html, body {
 .nav-links {
     display: flex;
     justify-content: center;
-    gap: 40px; /* Space between navigation links for a neat and organized look */
+    gap: 90px; /* Space between navigation links for a neat and organized look */
     list-style: none;
     padding: 0;
     margin: 0;
@@ -77,6 +76,7 @@ html, body {
     text-decoration: none;
     font-size: 18px; /* Consistent, readable font size */
     padding: 5px 10px;
+    font-size: 25px;
     transition: color 0.3s ease, background-color 0.3s ease, border-bottom 0.3s ease; /* Adding transition to enhance hover effect */
 }
 
@@ -120,12 +120,11 @@ body {
 }
 
 footer {
-    background-color: #262626;
+    background-color: #26262600;
     color: #e0e0e0;
     text-align: center;
     padding: 20px;
     margin-top: auto;  /* Push footer to the bottom */
     font-family: 'Georgia', serif;
     font-size: 14px;
-    border-top: 3px solid #444;
 }

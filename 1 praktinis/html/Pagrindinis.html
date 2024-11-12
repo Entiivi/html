@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/background.css">
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/pagrindinis.css">
     <link rel="stylesheet" href="/css/shared.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <title>Main</title>
 </head>
+
 <body>
+    <canvas id="background-canvas"></canvas>
     <header>
         <div class="title-container">
             <h1>Main</h1>
@@ -29,7 +33,7 @@
     <div class="main-container">
         <!-- Left Menu Column -->
         <div class="left-menu-column">
-            <h3>Content Search</h3>
+            <h3>Search</h3>
             <div class="search-container">
                 <form class="search-form" onsubmit="return handleSearch()">
                     <div class="input-container">
@@ -40,7 +44,7 @@
                     <a href="upload.html" class="upload-button-link">Upload</a>
                 </form>
             </div>
-            
+
             <!-- Social Media Links -->
             <div class="social-media-links">
                 <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
@@ -52,7 +56,7 @@
         <!-- Main Content Column -->
         <div class="content-column">
             <!-- Hero Section -->
-            <figure class="hero-wrapper">           
+            <figure class="hero-wrapper">
                 <section class="hero">
                     <div class="hero-content">
                         <h2>My Website</h2>
@@ -61,16 +65,21 @@
                 </section>
             </figure>
 
-           <!-- Gallery Teaser Section -->
+            <!-- Gallery Teaser Section -->
             <figure class="hero-wrapper1">
                 <section class="gallery-teaser">
                     <h2>Gallery</h2>
                     <div class="gallery-carousel">
-                        <div class="gallery-item item-1" data-index="0"><img src="\Nuotraukos\DSC_1277.JPG" alt="Photo 1"></div>
-                        <div class="gallery-item item-2" data-index="1"><img src="\Nuotraukos\DSC_3027.JPG" alt="Photo 2"></div>
-                        <div class="gallery-item item-3" data-index="2"><img src="\Nuotraukos\DSC_5660.JPG" alt="Photo 3"></div>
-                        <div class="gallery-item item-4" data-index="3"><img src="\Nuotraukos\DSC_5684.JPG" alt="Photo 4"></div>
-                        <div class="gallery-item item-5" data-index="4"><img src="\Nuotraukos\DSC_6075.JPG" alt="Photo 5"></div>
+                        <div class="gallery-item item-1" data-index="0"><img src="\Nuotraukos\DSC_1277.JPG"
+                                alt="Photo 1"></div>
+                        <div class="gallery-item item-2" data-index="1"><img src="\Nuotraukos\DSC_3027.JPG"
+                                alt="Photo 2"></div>
+                        <div class="gallery-item item-3" data-index="2"><img src="\Nuotraukos\DSC_5660.JPG"
+                                alt="Photo 3"></div>
+                        <div class="gallery-item item-4" data-index="3"><img src="\Nuotraukos\DSC_5684.JPG"
+                                alt="Photo 4"></div>
+                        <div class="gallery-item item-5" data-index="4"><img src="\Nuotraukos\DSC_6075.JPG"
+                                alt="Photo 5"></div>
                     </div>
                     <p><a href="galerija.html">More</a></p>
                 </section>
@@ -83,78 +92,98 @@
     </footer>
 
     <script>
-        function handleSearch() {
+        function handleSearch()
+        {
             // Get the user's search input
             let query = document.getElementById('searchInput').value.toLowerCase();
-    
+
             // If there's nothing to search, just return
-            if (query === "") {
+            if (query === "")
+            {
                 alert("Please enter a search term.");
                 return false;
             }
-    
+
             // Get all elements that you want to search through
             let sections = document.querySelectorAll('.content-column section, .left-menu-column ul li a');
-    
+
             // Loop through each element to see if it matches the query
-            sections.forEach((section) => {
+            sections.forEach((section) =>
+            {
                 // If text contains the search term, make it visible, otherwise hide it
-                if (section.textContent.toLowerCase().includes(query)) {
+                if (section.textContent.toLowerCase().includes(query))
+                {
                     section.style.display = 'block';
-                } else {
+                } else
+                {
                     section.style.display = 'none';
                 }
             });
-    
+
             // Prevent form submission since the search is handled with JavaScript
             return false;
         }
 
     </script>
 
-<script>
-    document.addEventListener("DOMContentLoaded", function () {
-        const items = Array.from(document.querySelectorAll('.gallery-item'));
-        const totalItems = items.length;
-        let currentIndex = 0;
+    <script>
+        document.addEventListener("DOMContentLoaded", function ()
+        {
+            const items = Array.from(document.querySelectorAll('.gallery-item'));
+            const totalItems = items.length;
+            let currentIndex = 0;
 
-        // Set initial styles and positioning
-        function updateCarousel() {
-            items.forEach((item, index) => {
-                item.classList.remove('active', 'left', 'right', 'far-left', 'far-right');
+            // Set initial styles and positioning
+            function updateCarousel()
+            {
+                items.forEach((item, index) =>
+                {
+                    item.classList.remove('active', 'left', 'right', 'far-left', 'far-right');
 
-                if (index === currentIndex) {
-                    item.classList.add('active');
-                } else if (index === (currentIndex + 1) % totalItems) {
-                    item.classList.add('right');
-                } else if (index === (currentIndex - 1 + totalItems) % totalItems) {
-                    item.classList.add('left');
-                } else if (index === (currentIndex + 2) % totalItems) {
-                    item.classList.add('far-right');
-                } else if (index === (currentIndex - 2 + totalItems) % totalItems) {
-                    item.classList.add('far-left');
-                } else {
-                    // If not in the primary positions, lower the visibility
-                    item.style.opacity = '0.2';
-                    item.style.transform = `scale(0.5)`;
-                }
+                    if (index === currentIndex)
+                    {
+                        item.classList.add('active');
+                    } else if (index === (currentIndex + 1) % totalItems)
+                    {
+                        item.classList.add('right');
+                    } else if (index === (currentIndex - 1 + totalItems) % totalItems)
+                    {
+                        item.classList.add('left');
+                    } else if (index === (currentIndex + 2) % totalItems)
+                    {
+                        item.classList.add('far-right');
+                    } else if (index === (currentIndex - 2 + totalItems) % totalItems)
+                    {
+                        item.classList.add('far-left');
+                    } else
+                    {
+                        // If not in the primary positions, lower the visibility
+                        item.style.opacity = '0.2';
+                        item.style.transform = `scale(0.5)`;
+                    }
+                });
+            }
+
+            // Handle click event on items to move the clicked item to the center
+            items.forEach((item, index) =>
+            {
+                item.addEventListener('click', () =>
+                {
+                    if (index !== currentIndex)
+                    {
+                        currentIndex = index;
+                        updateCarousel();
+                    }
+                });
             });
-        }
 
-        // Handle click event on items to move the clicked item to the center
-        items.forEach((item, index) => {
-            item.addEventListener('click', () => {
-                if (index !== currentIndex) {
-                    currentIndex = index;
-                    updateCarousel();
-                }
-            });
+            // Initial update to ensure correct positioning
+            updateCarousel();
         });
+    </script>
 
-        // Initial update to ensure correct positioning
-        updateCarousel();
-    });
-</script>
-    
+    <script src="/scripts/background.js" type="text/javascript"></script>
+
 </body>
+
 </html>
