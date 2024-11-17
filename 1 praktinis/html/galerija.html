@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery</title>
+    <link rel="stylesheet" href="/css/background.css">
     <link rel="stylesheet" href="/css/search.css">
     <link rel="stylesheet" href="/css/herowrappershared.css">
     <link rel="stylesheet" href="/css/shared.css">
@@ -11,6 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
+    <canvas id="background-canvas"></canvas>
     <header>
         <div class="title-container">
             <h1>Gallery</h1>
@@ -30,23 +32,23 @@
     <div class="main-container">
         <!-- Left Menu Column -->
         <div class="left-menu-column">
-            <h3>Content Search</h3>
+            <h3>Search</h3>
             <div class="search-container">
                 <form class="search-form" onsubmit="return handleSearch()">
                     <div class="input-container">
                         <input type="text" id="searchInput" placeholder="Search...">
                         <span class="tooltip">Enter photo name or genre</span>
                     </div>
-                    <button type="submit">Search</button>
+                    <button1 type="submit">Search</button1>
                     <a href="upload.html" class="upload-button-link">Upload</a>
                 </form>
             </div>
             
             <!-- Social Media Links -->
             <div class="social-media-links">
-                <a href="https://www.facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-                <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="https://www.twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.facebook.com" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com" target="_blank" class="instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.twitter.com" target="_blank" class="twitter"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
 
@@ -170,5 +172,32 @@
             modalImg.classList.remove("horizontal");
         }
     </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const galleryImages = document.querySelectorAll('.gallery-img');
+
+            // Add the 'fade-in' class to each gallery image with a delay to create a smooth pop-up effect
+            galleryImages.forEach((img, index) => {
+                setTimeout(() => {
+                    img.classList.add('fade-in');
+                }, index * 200); // Adds a delay for each image to stagger the animations
+            });
+        });
+    </script>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const svgheart = document.querySelectorAll('.svg-heart');
+
+            svgheart.forEach((img, index) => {
+                setTimeout(() => {
+                    img.classList.add('fade-in');
+                }, index * 200);
+            });
+        });
+    </script>
+
+    <script src="/scripts/background.js" type="text/javascript"></script>
 </body>
 </html>
