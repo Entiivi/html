@@ -10,6 +10,7 @@ html, body {
     color: #333; /* Dark gray for text */
 }
 
+
 /* Styling for the title container */
 .title-container {
     background-color: #26262600; /* Dark, muted background similar to a retro archive look */
@@ -127,4 +128,87 @@ footer {
     margin-top: auto;  /* Push footer to the bottom */
     font-family: 'Georgia', serif;
     font-size: 14px;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .title-container h1 {
+        font-size: 36px; /* Smaller font size for smaller devices */
+    }
+
+    .title-container h1::before,
+    .title-container h1::after {
+        width: 80px; /* Reduce line length */
+    }
+
+    .nav-links {
+        gap: 60px; /* Reduce gap between navigation links */
+    }
+
+    .nav-links li a {
+        font-size: 20px; /* Smaller font size for navigation links */
+    }
+}
+
+@media (max-width: 768px) {
+    .title-container h1 {
+        font-size: 28px; /* Further reduce font size for smaller devices */
+    }
+
+    .title-container h1::before,
+    .title-container h1::after {
+        width: 60px; /* Reduce line length */
+    }
+
+    .nav-links {
+        gap: 30px; /* Reduce gap between navigation links */
+    }
+
+    .nav-links li a {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 480px) {
+    .title-container h1 {
+        font-size: 24px; /* Even smaller font size for very small devices */
+    }
+
+    .title-container h1::before,
+    .title-container h1::after {
+        width: 40px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap; /* Allow links to wrap to the next row if needed */
+        gap: 20px;
+    }
+
+    .nav-links li a {
+        font-size: 16px;
+    }
+} 
+
+@media (max-width: 320px) {
+    .title-container h1 {
+        font-size: 20px;
+    }
+
+    .title-container h1::before,
+    .title-container h1::after {
+        width: 30px;
+    }
+
+    .nav-links {
+        gap: 10px;
+    }
+
+    .nav-links li {
+        flex-basis: 50%; /* Split navigation links into two rows */
+        text-align: center;
+    }
+
+    .nav-links li a {
+        font-size: 14px;
+    }
 }

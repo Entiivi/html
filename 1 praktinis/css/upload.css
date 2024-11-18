@@ -1,12 +1,15 @@
+/* Main Container Styling */
 .main-container {
     display: flex;
     flex-direction: row;
-    margin: 0 auto; 
+    width: 90%; /* Make container responsive by using a percentage width */
+    max-width: 1800px; /* Set a max-width to prevent stretching too much on large screens */
+    margin: 0 auto; /* Center the main container */
     padding: 20px;
-    align-content: center;
-    gap: 20px; 
+    gap: 20px; /* Space between columns */
     font-family: 'Georgia', serif;
 }
+
 .hero-wrapper {
     text-align: center; 
 }
