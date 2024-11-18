@@ -221,6 +221,16 @@
         gap: 1rem;
     }
 
+    .left-menu-column {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        order: -1; /* Place it before the main content */
+    }
+
     .content-column {
         width: 100%;
         padding: 2rem;
@@ -270,6 +280,16 @@
         width: 100%;
         padding: 1rem;
         gap: 0.5rem;
+    }
+
+    .left-menu-column {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        order: -1; /* Place it before the main content */
     }
 
     .content-column {
@@ -329,6 +349,16 @@
         width: 100%;
         padding: 1rem;
         gap: 0.5rem;
+    }
+
+    .left-menu-column {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 1rem;
+        padding: 1rem;
+        order: -1; /* Place it before the main content */
     }
 
     .content-column {
