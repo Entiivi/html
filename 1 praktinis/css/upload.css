@@ -8,11 +8,12 @@
     padding: 20px;
     gap: 20px;
     font-family: 'Georgia', serif;
-    justify-content: center; /* Center the container relative to the head title container */
+    justify-content: center;
+    /* Center the container relative to the head title container */
 }
 
 .hero-wrapper {
-    text-align: center; 
+    text-align: center;
 }
 
 .upload-container {
@@ -172,7 +173,8 @@
     }
 
     .form-section {
-        order: 1; /* Ensure the form section is above the preview */
+        order: 1;
+        /* Ensure the form section is above the preview */
     }
 
     .form-section input,
@@ -183,13 +185,15 @@
     }
 
     .image-preview {
-        order: 2; /* Position preview after form inputs */
+        order: 2;
+        /* Position preview after form inputs */
         width: 100%;
         font-size: 70px;
     }
 
     .buttons-container {
-        order: 3; /* Move buttons inside the image preview section */
+        order: 3;
+        /* Move buttons inside the image preview section */
         flex-direction: column;
         gap: 1rem;
         width: 100%;
@@ -217,7 +221,8 @@
     }
 
     .form-section {
-        order: 1; /* Ensure form inputs are above preview */
+        order: 1;
+        /* Ensure form inputs are above preview */
     }
 
     .form-section input,
@@ -228,13 +233,15 @@
     }
 
     .image-preview {
-        order: 2; /* Position preview after form inputs */
+        order: 2;
+        /* Position preview after form inputs */
         width: 100%;
         font-size: 60px;
     }
 
     .buttons-container {
-        order: 3; /* Move buttons inside the image preview section */
+        order: 3;
+        /* Move buttons inside the image preview section */
         flex-direction: column;
         gap: 0.5rem;
         width: 100%;
@@ -249,7 +256,12 @@
 
 /* Landscape Mode for Tablets (768px - 1279px) */
 @media (max-width: 1279px) and (orientation: landscape) {
-    .main-container, .upload-container, .form-section, .image-preview, .buttons-container {
+
+    .main-container,
+    .upload-container,
+    .form-section,
+    .image-preview,
+    .buttons-container {
         width: 95%;
         margin: 0 auto;
         text-align: center;
@@ -272,7 +284,12 @@
 
 /* Landscape Mode for Phones (up to 767px) */
 @media (max-width: 767px) and (orientation: landscape) {
-    .main-container, .upload-container, .form-section, .image-preview, .buttons-container {
+
+    .main-container,
+    .upload-container,
+    .form-section,
+    .image-preview,
+    .buttons-container {
         width: 95%;
         margin: 0 auto;
         text-align: center;
