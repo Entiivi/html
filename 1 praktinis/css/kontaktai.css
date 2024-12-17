@@ -1,19 +1,20 @@
-/* Main Container Styling */
 .main-container {
     display: flex;
     flex-direction: row;
-    width: 1200px;
-    margin: 0 auto;
+    width: 1200px; /* Fixed width for the main container */
+    margin: 0 auto; /* Center the main container */
     padding: 20px;
+    gap: 20px; /* Space between columns */
     font-family: 'Georgia', serif;
-    gap: 20px;
 }
 
 /* Right Content Column Styling */
 .content-column {
-    flex-grow: 1;
+    flex-grow: 1; /* Take up remaining space */
     padding: 20px;
+    text-align: center;
 }
+
 
 .content-column h2 {
     text-align: center;
@@ -76,223 +77,3 @@ iframe {
     border: 1px solid #ddd;
 }
 
-/* Ultra Large Desktop (>1920px) */
-@media (min-width: 1920px) {
-    .main-container {
-        width: 80%;
-        max-width: 2000px;
-        padding: 3rem;
-        gap: 2rem;
-    }
-
-    .content-column {
-        padding: 4rem;
-    }
-
-    .about-section, .about-content {
-        font-size: 1.8rem;
-        line-height: 2;
-    }
-
-    .about-content h3 {
-        font-size: 2.5rem;
-    }
-
-    .about-content a, .about-content p {
-        font-size: 1.8rem;
-    }
-
-    .gallery-carousel {
-        height: 25vh;
-    }
-}
-
-/* Standard Desktop (1280px - 1919px) */
-@media (max-width: 1919px) {
-    .main-container {
-        width: 90%;
-        padding: 2rem;
-    }
-
-    .content-column {
-        padding: 3rem;
-    }
-
-    .about-section, .about-content {
-        font-size: 1.5rem;
-        line-height: 1.8;
-    }
-
-    .about-content h3 {
-        font-size: 2rem;
-    }
-
-    .gallery-carousel {
-        height: 20vh;
-    }
-}
-
-/* Tablet (768px - 1279px) */
-@media (max-width: 1279px) {
-    .main-container {
-        flex-direction: column;
-        align-items: center;
-        width: 95%;
-        padding: 1.5rem;
-        gap: 1rem;
-    }
-
-    .content-column {
-        width: 100%;
-        padding: 2rem;
-    }
-
-    .about-section, .about-content {
-        font-size: 1.3rem;
-        line-height: 1.7;
-    }
-
-    .about-content h3 {
-        font-size: 1.8rem;
-    }
-
-    .gallery-carousel {
-        height: 18vh;
-    }
-
-    .gallery-item {
-        width: 20vw;
-        height: 12vw;
-        /* Reduced size for smaller devices */
-    }
-
-    .gallery-wrapper {
-        grid-template-columns: 1fr;
-        width: 70%;
-        margin: 0 auto;
-        /* Display images in one column for smaller devices and adjust width */
-    }
-}
-
-/* Mobile (up to 767px) */
-@media (max-width: 767px) {
-    .main-container {
-        flex-direction: column;
-        width: 100%;
-        padding: 1rem;
-        gap: 0.5rem;
-        align-items: center;
-    }
-
-    .content-column {
-        width: 100%;
-        padding: 1rem;
-        text-align: center;
-    }
-
-    .about-section, .about-content {
-        font-size: 1.1rem;
-        line-height: 1.6;
-    }
-
-    .about-content h3 {
-        font-size: 1.5rem;
-    }
-
-    .gallery-carousel {
-        height: 15vh;
-    }
-
-    .gallery-item {
-        width: 30vw;
-        height: 20vw;
-    }
-
-    .gallery-wrapper {
-        grid-template-columns: 1fr;
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .left-menu-column ul li a {
-        font-size: 14px;
-    }
-}
-
-/* Landscape Mode for Tablets (768px - 1279px) */
-@media (max-width: 1279px) and (orientation: landscape) {
-    .title-container {
-        text-align: center;
-    }
-
-    .main-container, .content-column, .gallery-wrapper {
-        width: 90%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .gallery-item {
-        width: 80%;
-        height: auto;
-        margin: 0 auto;
-    }
-}
-
-/* Landscape Mode for Phones (up to 767px) */
-@media (max-width: 767px) and (orientation: landscape) {
-    .title-container {
-        text-align: center;
-    }
-
-    .main-container, .content-column, .gallery-wrapper {
-        width: 90%;
-        margin: 0 auto;
-        text-align: center;
-    }
-
-    .gallery-item {
-        width: 90%;
-        height: auto;
-        margin: 0 auto;
-    }
-}
-
-/* Portrait Mode for Tablets (768px - 1279px) */
-@media (max-width: 1279px) and (orientation: portrait) {
-    .main-container {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        overflow-x: hidden;
-    }
-
-    .gallery-wrapper {
-        width: 80%;
-        margin: 0 auto;
-    }
-
-    .gallery-item {
-        width: 70%;
-        margin: 0 auto;
-    }
-}
-
-/* Portrait Mode for Phones (up to 767px) */
-@media (max-width: 767px) and (orientation: portrait) {
-    .main-container {
-        width: 100%;
-        margin: 0 auto;
-        text-align: center;
-        overflow-x: hidden;
-    }
-
-    .gallery-wrapper {
-        width: 90%;
-        margin: 0 auto;
-    }
-
-    .gallery-item {
-        width: 80%;
-        margin: 0 auto;
-    }
-}

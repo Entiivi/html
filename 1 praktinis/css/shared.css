@@ -84,7 +84,7 @@ html, body {
 /* Hover effect with star symbol */
 .nav-links li a:hover {
     color: inherit; /* White text on hover */
-    background-color: #444; /* Darker background to make the hover effect visible */
+
     border-bottom: 3px solid #ff9800; /* Add a retro orange underline effect on hover */
     text-decoration: none; /* No underline except for the border-bottom */
 }
