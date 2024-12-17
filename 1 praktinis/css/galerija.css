@@ -125,15 +125,18 @@ figure {
     max-width: 30%;
     color: #ffffff;
     font-family: 'Georgia', serif;
-    font-size: 24px;
+    text-align: left;
+    font-size: 20px;
     line-height: 1.6;
-    overflow-y: auto; /* Enable scrolling if content exceeds the height */
-    height: auto; /* Make sure text takes up as much height as needed */
-    display: flex;
-    align-items: center; /* Vertically align text in line with the photo */
-    background: rgba(48, 45, 45, 0.716); /* Optional: add a subtle background */
+    overflow-y: auto;
+    background: rgba(48, 45, 45, 0.8);
     padding: 20px;
     border-radius: 10px;
+}
+
+.about-text div {
+    display: block; /* Force each div onto its own line */
+    margin-bottom: 10px; /* Spacing between each row */
 }
 
 /* Close button styling for modal */

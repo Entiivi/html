@@ -1,0 +1,56 @@
+/* Cog Icon */
+#settings-icon {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 1.5rem;
+    padding: 10px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.3s ease;
+}
+
+#settings-icon:hover {
+    transform: rotate(90deg);
+}
+
+/* Settings Menu */
+#settings-menu {
+    position: fixed;
+    top: 0;
+    right: -300px; /* Hidden by default */
+    width: 300px;
+    height: 100vh;
+    background: #333;
+    color: white;
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 999;
+}
+
+#settings-menu h3 {
+    margin-top: 0;
+}
+
+.setting-option {
+    margin: 15px 0;
+}
+
+.setting-option label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+#close-settings {
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#close-settings:hover {
+    background: #008c9e;
+}

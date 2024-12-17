@@ -1,36 +1,62 @@
-        /* Photo Slider Puzzle CSS */
-        .photo-slider-puzzle {
-            text-align: center;
-            margin: 20px auto;
-            max-width: 400px;
-        }
+.content-column {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+}
 
-        #puzzle-container {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: repeat(3, 1fr);
-            gap: 2px;
-            border: 2px solid #000;
-            width: 300px;
-            height: 300px;
-            margin: 0 auto;
-        }
+#puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    gap: 2px;
+    margin: 20px 0;
+    justify-content: center;
+}
 
-        .puzzle-tile {
-            background-size: 300px 300px;
-            background-repeat: no-repeat;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: white;
-            border: 1px solid #000;
-        }
+.puzzle-tile {
+    width: 100px;
+    height: 100px;
+    background-size: 300px 300px; /* Ensure the full image fits */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+    color: white;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #444;
+}
 
-        .empty {
-            background: none;
-            cursor: default;
-            border: none;
-        }
+.empty {
+    background: none;
+    border: none;
+}
+
+#shuffle-button {
+    background: #444; /* Blue gradient */
+    color: #fff; /* White text color */
+    font-size: 1.2rem; /* Larger text */
+    padding: 10px 20px; /* Padding for better spacing */
+    border: none; /* Remove default border */
+    border-radius: 10px; /* Rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Subtle shadow for 3D effect */
+    text-transform: uppercase; /* Make the text uppercase */
+    letter-spacing: 1px; /* Spacing between letters */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth hover transition */
+}
+
+#shuffle-button:hover {
+    background: #6a6969; /* Darker gradient on hover */
+    transform: scale(1.05); /* Slightly increase size on hover */
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.3); /* Increase shadow for 3D effect */
+}
+
+#shuffle-button:active {
+    transform: scale(0.95); /* Slight shrink on click */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Reduce shadow on click */
+}

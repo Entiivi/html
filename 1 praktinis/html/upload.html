@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="../css/upload.css">
     <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/settings.css">
     <title>Upload</title>
 </head>
 <body>
@@ -30,6 +31,37 @@
             </nav>
         </div>
     </header>
+
+            <!-- Cog Icon -->
+            <div id="settings-icon">
+                <i class="fas fa-cog"></i>
+            </div>
+        
+            <!-- Settings Menu -->
+            <div id="settings-menu">
+                <h3>Settings</h3>
+                <hr>
+                <!-- Background Theme -->
+                <div class="setting-option">
+                    <label for="theme">Choose Theme:</label>
+                    <select id="theme">
+                        <option value="default">Default</option>
+                        <option value="night">Light Mode</option>
+                    </select>
+                </div>
+        
+                <!-- Header Color -->
+                <div class="setting-option">
+                    <label for="header-color">Header Color:</label>
+                    <input type="color" id="header-color" value="#ffffff">
+                </div>
+        
+                <!-- Header Font Size -->
+                <div class="setting-option">
+                    <label for="header-size">Header Size:</label>
+                    <input type="range" id="header-size" min="20" max="50" value="30">
+                </div>
+            </div>
 
     <div class="main-container">
        <!-- Left Menu Column -->
@@ -182,6 +214,6 @@
         }
     });
 </script>
-
+<script src="../scripts/settings.js" type="text/javascript"></script>
 <script src="../scripts/background.js" type="text/javascript"></script>
 </html>

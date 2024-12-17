@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/herowrappershared.css">
     <link rel="stylesheet" href="../css/shared.css">
     <link rel="stylesheet" href="../css/galerija.css">
+    <link rel="stylesheet" href="../css/settings.css">
     <title>Gallery</title>
 </head>
 <body class="d-flex flex-column min-vh-100">
@@ -31,6 +32,37 @@
             </nav>
         </div>
     </header>
+
+        <!-- Cog Icon -->
+        <div id="settings-icon">
+            <i class="fas fa-cog"></i>
+        </div>
+    
+        <!-- Settings Menu -->
+        <div id="settings-menu">
+            <h3>Settings</h3>
+            <hr>
+            <!-- Background Theme -->
+            <div class="setting-option">
+                <label for="theme">Choose Theme:</label>
+                <select id="theme">
+                    <option value="default">Default</option>
+                    <option value="night">Light Mode</option>
+                </select>
+            </div>
+    
+            <!-- Header Color -->
+            <div class="setting-option">
+                <label for="header-color">Header Color:</label>
+                <input type="color" id="header-color" value="#ffffff">
+            </div>
+    
+            <!-- Header Font Size -->
+            <div class="setting-option">
+                <label for="header-size">Header Size:</label>
+                <input type="range" id="header-size" min="20" max="50" value="30">
+            </div>
+        </div>
 
     <!-- Main Content Column -->
     <div class="main-container flex-grow-1">
@@ -62,7 +94,7 @@
                         <div class="row g-4">
                             <!-- Image 1 -->
                             <div class="col-lg-4 col-md-6 col-sm-12 position-relative">
-                                <img src="../Nuotraukos/DSC_1277.JPG" alt="Close-up photograph of a daisy flower." class="img-fluid gallery-img">
+                                <img src="../Nuotraukos/DSC_1277.JPG" alt="Author: Ignas Sakalauskas|Description: Photograph of a daisy flower.|Upload date: 2024-01-23" class="img-fluid gallery-img">
                                 <svg class="svg-heart position-absolute bottom-0 end-1 m-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
@@ -70,7 +102,7 @@
     
                             <!-- Image 2 -->
                             <div class="col-lg-4 col-md-6 col-sm-12 position-relative">
-                                <img src="../Nuotraukos/DSC_5660.JPG" alt="Gray cat lying on a paved surface." class="img-fluid gallery-img">
+                                <img src="../Nuotraukos/DSC_5660.JPG" alt="Author: Ignas Sakalauskas|Description: Gray cat lying on a paved surface.|Upload date: 2024-02-23" class="img-fluid gallery-img">
                                 <svg class="svg-heart position-absolute bottom-0 end-1 m-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
@@ -78,7 +110,7 @@
     
                             <!-- Image 3 -->
                             <div class="col-lg-4 col-md-6 col-sm-12 position-relative">
-                                <img src="../Nuotraukos/DSC_5684.JPG" alt="Wide scenic view of nature." class="img-fluid gallery-img">
+                                <img src="../Nuotraukos/DSC_5684.JPG" alt="Author: Ignas Sakalauskas|Description: Wide scenic view of nature.|Upload date: 2024-02-23Wide scenic view of nature." class="img-fluid gallery-img">
                                 <svg class="svg-heart position-absolute bottom-0 end-1 m-2" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="30" height="30">
                                     <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                                 </svg>
@@ -147,7 +179,11 @@
         <span class="close">&times;</span>
         <div class="modal-content-wrapper">
             <img class="modal-content" id="img01">
-            <div class="about-text" id="aboutText"></div>
+            <div class="about-text" id="aboutText">
+                <div id="author"></div>
+                <div id="description"></div>
+                <div id="upload-date"></div>
+            </div>
         </div>
     </div>
 
@@ -164,7 +200,13 @@
             images[i].onclick = function() {
                 modal.style.display = "flex"; // Display the modal with flex to center align content
                 modalImg.src = this.src;
-                modalAboutText.textContent = this.alt; // Use alt text as about text
+                                // Parse alt text and format into separate lines
+                                const altText = this.alt; // Example: "Author: Ignas Sakalauskas|Description: Photograph of a daisy flower.|Upload date: 2024-01-23"
+                const formattedText = altText
+                    .split('|') // Split alt text into parts using "|" as delimiter
+                    .map(line => `<div>${line}</div>`) // Wrap each part in a div
+                    .join(''); // Combine all parts into a single string
+                modalAboutText.innerHTML = formattedText; // Use alt text as about text
 
                 // Check if the clicked image has the class 'tall' or 'wide'
                 if (this.parentElement.classList.contains("tall")) {
@@ -217,7 +259,7 @@
             });
         });
     </script>
-
+    <script src="../scripts/settings.js" type="text/javascript"></script>
     <script src="../scripts/background.js" type="text/javascript"></script>
 </body>
 </html>

@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="../css/search.css">
     <link rel="stylesheet" href="../css/apie.css">
     <link rel="stylesheet" href="../css/shared.css">
+    <link rel="stylesheet" href="../css/settings.css">
     <title>About</title>
 </head>
 <body>
@@ -31,6 +32,37 @@
             </nav>
         </div>
     </header>
+
+        <!-- Cog Icon -->
+        <div id="settings-icon">
+            <i class="fas fa-cog"></i>
+        </div>
+    
+        <!-- Settings Menu -->
+        <div id="settings-menu">
+            <h3>Settings</h3>
+            <hr>
+            <!-- Background Theme -->
+            <div class="setting-option">
+                <label for="theme">Choose Theme:</label>
+                <select id="theme">
+                    <option value="default">Default</option>
+                    <option value="night">Light Mode</option>
+                </select>
+            </div>
+    
+            <!-- Header Color -->
+            <div class="setting-option">
+                <label for="header-color">Header Color:</label>
+                <input type="color" id="header-color" value="#ffffff">
+            </div>
+    
+            <!-- Header Font Size -->
+            <div class="setting-option">
+                <label for="header-size">Header Size:</label>
+                <input type="range" id="header-size" min="20" max="50" value="30">
+            </div>
+        </div>
 
     <div class="main-container">
        <!-- Left Menu Column -->
@@ -57,11 +89,12 @@
 
         <!-- Main Content Column -->
             <div class="content-column">
-                <section class="photo-slider-puzzle">
+                <div class="content-column d-flex justify-content-center align-items-center flex-column">
                     <h2>Photo Slider Puzzle</h2>
-                    <div id="puzzle-container"></div>
-                    <button id="shuffle-button" class="btn btn-primary mt-3">Shuffle</button>
-                </section>
+                    <p id="timer" style="font-size: 18px; margin-bottom: 10px;">Time: 0s</p>
+                    <div id="puzzle-container" style="display: grid; grid-template-columns: repeat(3, 100px); grid-template-rows: repeat(3, 100px); gap: 2px; margin-bottom: 10px;"></div>
+                    <button id="shuffle-button" class="btn">Shuffle</button>
+                </div>
             </div>
         </div>
     </div>
@@ -70,8 +103,7 @@
         <p>&copy; 2024 Ignas Sakalauskas PI22B</p>
     </footer>
 </body>
-
+<script src="../scripts/settings.js" type="text/javascript"></script>
 <script src="../scripts/minigame.js" type="text/javascript"></script>
-
 <script src="../scripts/background.js" type="text/javascript"></script>
 </html>
